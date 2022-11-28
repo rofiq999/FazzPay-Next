@@ -98,7 +98,7 @@ function Login() {
             </div>
             <div className={css.forgot}>
               <Link href="/resetpassword">
-                <p>Forgot Password?</p>
+                <p className={css['forgot-pass']}>Forgot Password?</p>
               </Link>
             </div>
             <button className={css.login} onClick={postLogin}>
