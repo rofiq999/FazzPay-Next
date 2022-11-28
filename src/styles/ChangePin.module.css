@@ -14,7 +14,7 @@
 }
 
 .tittle {
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-size: 18px;
   font-weight: 700;
   line-height: 25px;
@@ -23,7 +23,7 @@
 }
 
 .desc {
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
@@ -93,6 +93,7 @@
 }
 
 .btn {
+  cursor: pointer;
   width: 50%;
   padding-top: 2%;
   padding-bottom: 2%;
@@ -101,7 +102,7 @@
   border-radius: 12px;
   display: flex;
   justify-content: center;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
