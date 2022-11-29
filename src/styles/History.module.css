@@ -112,7 +112,11 @@
     max-height: 720px;
     overflow-x: hidden;
 }
-
+.not-found{
+    display: none;
+    font-size: 20px;
+    text-align: center;
+}
 @media screen and (max-width: 768px) {
     .content_right {
         width: 100%;

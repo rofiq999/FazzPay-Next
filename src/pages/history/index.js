@@ -80,7 +80,7 @@ function Index() {
               {/* modal history */}
               <div className={styles.history__modal}>
                 {(totaldata <= 0)
-                  ? (<h1>data not found</h1>)
+                  ? (<h1 className={styles["not-found"]}>data not found</h1>)
                   : data.map((user) => (
                     <CardTransaction
                       key={user.id}
