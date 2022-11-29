@@ -1,9 +1,6 @@
 import axios from 'axios';
-import Cookies from 'js-cookie';
 
-const urlBE = process.env.BACKEND_HOST;
-const url = "https://fazzpay-rose.vercel.app"
-const getId = Cookies.get("id");
+
 
 export const register = (body) => {
     return axios.post("https://fazzpay-rose.vercel.app/auth/register", body)
