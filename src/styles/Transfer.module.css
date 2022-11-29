@@ -23,7 +23,7 @@
 
 .scroll {
     padding-right: 20px;
-    padding-top: 20px;
+    
 }
 
 
@@ -74,7 +74,14 @@
     background: rgba(58, 61, 66, 0.1);
 }
 
-
+@media screen and (max-width: 768px) {
+.scroll{
+    padding-top: 0;
+}
+.scroll_bar{
+    margin-top: 0;
+}
+}
 
 @media screen and (max-width: 428px) {
     .content_right{
