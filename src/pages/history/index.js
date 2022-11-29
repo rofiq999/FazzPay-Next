@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import Image from "next/image";
 //import components
 import Header from "../../components/Header/Header";
@@ -6,19 +6,24 @@ import Footer from "../../components/Footer/Footer";
 import Sidebar from "../../components/sidebar/Sidebar";
 import CardTransaction from "../../components/CardTransaction/index";
 import styles from "../../styles/History.module.css";
-// import component 👇
+// import component 
 import Drawers from "../../components/drawer/Drawer";
 import Cookies from "js-cookie";
 import axios from "axios";
+
+
 
 function Index() {
   const [data, setData] = useState([]);
   const [sort, setSort] = useState("");
   const [totaldata, setTotaldata] = useState("")
+ 
 
 
   const sortHandler = (element) => {
     setSort(element.target.value)
+   
+
   };
 
   useEffect(() => {

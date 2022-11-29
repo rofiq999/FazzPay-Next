@@ -85,7 +85,7 @@ function Pin() {
             <p className={css.title_bar_2}>Create 6 digits pin to secure all your money and your data in FazzPay app. Keep it secret and don`t tell anyone about your FazzPay account password and the PIN.</p>
 
             <div className={css.pin}>
-              <ReactCodeInput type="number" fields={6} pattern="/^-?\d+\.?\d*$/" onChange={valuePin} {...props} />
+              <ReactCodeInput type="password" fields={6} pattern="/^-?\d+\.?\d*$/" onChange={valuePin} {...props} />
             </div>
             {/* Action */}
             <button className={css.confirm} onClick={click}>
