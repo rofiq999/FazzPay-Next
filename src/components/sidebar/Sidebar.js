@@ -201,14 +201,14 @@ function Sidebar({ page }) {
                <Modal.Footer>
                   <Button
                      variant="success"
-                     className="fw-bold text-bg-success text-white"
+                     className="fw-bold text-bg-primary text-white"
                      onClick={handleLogout}
                   >
                      Yes
                   </Button>
                   <Button
                      variant="danger"
-                     className="fw-bold text-bg-danger text-white"
+                     className="fw-bold text-bg-dark text-white"
                      onClick={handleClosemodal}
                   >
                      No
