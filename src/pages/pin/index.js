@@ -7,7 +7,7 @@ const ReactCodeInput = dynamic(import('react-code-input'));
 import css from '../../styles/Pin.module.css';
 
 // import components
-import Dashboard from '../../components/dashboard/Dashboard';
+import Dashboard from '../../components/Content_left_auth/Dashboard';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 

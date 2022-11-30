@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import css from "../../styles/Register.module.css"
 
 // import components
-import Dashboard from '../../components/dashboard/Dashboard'
+import Dashboard from '../../components/Content_left_auth/Dashboard';
 
 // import redux
 import { useDispatch, useSelector } from "react-redux";

@@ -10,7 +10,7 @@ import Footer from '../../components/Footer/Footer';
 import Sidebar from '../../components/sidebar/Sidebar';
 
 import CardProfileTransfer from '../../components/card_profile_transfer/ProfileTransfer';
-import Drawers from '../../components/drawer/Drawer';
+import Drawers from "../../components/SidebarToggle/Drawer";
 import axios from 'axios';
 import Cookies from 'js-cookie';
 

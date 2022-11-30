@@ -7,7 +7,7 @@ import Sidebar from "../../../components/sidebar/Sidebar";
 import failed from "../../../assets/transferFailed/failed.png";
 import profile from "../../../assets/sitampan.png";
 import Image from "next/image";
-import Drawers from "../../../components/drawer/Drawer";
+import Drawers from "../../../components/SidebarToggle/Drawer";
 
 function TransferFailed() {
   return (

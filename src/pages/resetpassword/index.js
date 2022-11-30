@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import css from '../../styles/Resetpassword.module.css';
 
 // import components
-import Dashboard from '../../components/dashboard/Dashboard';
+import Dashboard from '../../components/Content_left_auth/Dashboard';
 import Link from 'next/link';
 import axios from 'axios';
 

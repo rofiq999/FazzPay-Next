@@ -2,7 +2,7 @@ import React from 'react'
 
 import css from "../../styles/Success.module.css"
 
-import Dashboard from '../../components/dashboard/Dashboard'
+import Dashboard from '../../components/Content_left_auth/Dashboard';
 import { useRouter } from 'next/router'
 
 function Success() {

@@ -14,7 +14,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import authActions from "../../redux/actions/auth";
 import { useDispatch, useSelector } from "react-redux";
-import Drawers from "../../components/drawer/Drawer";
+import Drawers from "../../components/SidebarToggle/Drawer";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 

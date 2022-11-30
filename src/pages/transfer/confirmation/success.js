@@ -9,7 +9,7 @@ import checklist from "../../../assets/transferSuccess/success.png";
 import profile from "../../../assets/sitampan.png";
 import Image from "next/image";
 
-import Drawers from "../../../components/drawer/Drawer";
+import Drawers from "../../../components/SidebarToggle/Drawer";
 import { useDispatch, useSelector } from "react-redux";
 import authActions from "../../../redux/actions/auth";
 import Cookies from "js-cookie";

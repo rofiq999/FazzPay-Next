@@ -28,7 +28,7 @@ import { useRouter } from "next/router";
 import authActions from "../../redux/actions/auth";
 import { useDispatch, useSelector } from "react-redux";
 import Cookies from "js-cookie";
-import Drawers from "../../components/drawer/Drawer";
+import Drawers from "../../components/SidebarToggle/Drawer";
 import axios from "axios";
 import Link from "next/link";
 function Index() {

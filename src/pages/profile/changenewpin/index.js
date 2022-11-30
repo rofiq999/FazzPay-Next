@@ -7,7 +7,7 @@ import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import { useRouter } from "next/router";
-import Drawers from "../../../components/drawer/Drawer";
+import Drawers from "../../../components/SidebarToggle/Drawer";
 import { ToastContainer, toast } from "react-toastify";
 import Cookies from "js-cookie";
 import axios from "axios";

@@ -5,7 +5,7 @@ import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import { useRouter } from "next/router";
-import Drawers from "../../../components/drawer/Drawer";
+import Drawers from "../../../components/SidebarToggle/Drawer";
 import { useSelector, useDispatch } from "react-redux";
 import router from "next/router";
 import axios from "axios";

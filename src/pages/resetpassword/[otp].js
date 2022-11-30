@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import css from '../../styles/Reset.module.css';
 
 // import component
-import Dashboard from '../../components/dashboard/Dashboard';
+import Dashboard from '../../components/Content_left_auth/Dashboard';
 import { Router, useRouter } from 'next/router';
 import axios from 'axios';
 

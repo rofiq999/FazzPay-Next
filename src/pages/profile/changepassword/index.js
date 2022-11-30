@@ -5,7 +5,7 @@ import css from "../../../styles/Changepassword.module.css";
 import Header from "../../../components/Header/Header";
 import Footer from "../../../components/Footer/Footer";
 import Sidebar from "../../../components/sidebar/Sidebar";
-import Drawers from "../../../components/drawer/Drawer";
+import Drawers from "../../../components/SidebarToggle/Drawer";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { ToastContainer, toast } from "react-toastify";

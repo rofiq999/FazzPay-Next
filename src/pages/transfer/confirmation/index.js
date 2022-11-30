@@ -13,7 +13,7 @@ import Sidebar from "../../../components/sidebar/Sidebar";
 //import image
 import icon_samuel from "../../../assets/dashboard/icon_samuel.png";
 
-import Drawers from "../../../components/drawer/Drawer";
+import Drawers from "../../../components/SidebarToggle/Drawer";
 import { useDispatch, useSelector } from "react-redux";
 import Cookies from "js-cookie";
 import axios from "axios";

@@ -11,7 +11,7 @@ import Footer from "../../components/Footer/Footer";
 import Sidebar from "../../components/sidebar/Sidebar";
 
 import CardProfileTransfer from "../../components/card_profile_transfer/ProfileTransfer";
-import Drawers from "../../components/drawer/Drawer";
+import Drawers from "../../components/SidebarToggle/Drawer";
 import Cookies from "js-cookie";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
