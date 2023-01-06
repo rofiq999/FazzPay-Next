@@ -20,7 +20,7 @@
 ## Introduction
 
 <h3>Fazzpay</h3>
-<p>aplikasi FazzPay, semua orang dapat melakukan transaksi dan pembayaran secara online dengan mudah, nyaman, di mana pun dan kapan pun hanya dengan satu aplikasi.
+<p>aplikasi fazzpay adalah aplikasi e-wallet yang dapat digunakan untuk melakukan transaksi pembayaran dan transfer secara online.
 .</p>
 
 ## Features
@@ -61,7 +61,7 @@ $ npm install
 Configure .env file by create file named .env inside project folder and add this line to the file:
 
 ```
-NEXT_PUBLIC_BACKEND_URL = https://fazzpay-rose.vercel.app
+NEXT_PUBLIC_BACKEND_URL = https://fazz-pay-next.vercel.app/
 ```
 
 ### 4. Run projects
@@ -80,7 +80,7 @@ You may also see any lint errors in the console.
 
 ## Deployment
 
-[Vercel deploy link](https://fazzpay-nextjs.vercel.app/)
+[Vercel deploy link](https://fazz-pay-next.vercel.app/)
 
 ## Screenshots App
 
@@ -95,7 +95,7 @@ You may also see any lint errors in the console.
 
 ## Related Project
 
--  Frontend Deploy [`here`](https://bujankcoffeereact.vercel.app/)
--  Backend API Deploy [`here`](https://bujankcoffeeapi.vercel.app/)
+-  Frontend Deploy [`here`](https://coffee-time-react.vercel.app/)
+-  Backend API Deploy [`here`](https://coffee-time-be-new.vercel.app/)
 
 <p align="center"><sub><b>&copy;2022❤️Fazzpay☕</b></sub></p>
