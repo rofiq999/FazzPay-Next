@@ -46,7 +46,7 @@
 
 .dashboard {
   cursor: pointer;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-weight: 700;
   font-size: 18px;
   line-height: 31px;
@@ -67,7 +67,7 @@
 
 .transfer {
   cursor: pointer;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-weight: 700;
   font-size: 18px;
   line-height: 31px;
@@ -76,7 +76,7 @@
 
 .topup {
   cursor: pointer;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
@@ -85,7 +85,7 @@
 
 .profile {
   cursor: pointer;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-weight: 700;
   font-size: 18px;
   line-height: 31px;
@@ -94,7 +94,7 @@
 
 .logout {
   cursor: pointer;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-weight: 700;
   font-size: 18px;
   line-height: 31px;
@@ -114,8 +114,8 @@
   z-index: 2;
 }
 
-.arrow[type="number"]::-webkit-outer-spin-button,
-.arrow[type="number"]::-webkit-inner-spin-button {
+.arrow[type='number']::-webkit-outer-spin-button,
+.arrow[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -125,7 +125,7 @@
 }
 
 .title_modal {
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -135,7 +135,7 @@
 }
 
 .desc_modal {
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -166,14 +166,13 @@
   font-size: 2rem;
 }
 
-
 .btn_submit {
   background: #6379f4;
   box-shadow: 0px 6px 75px rgba(100, 87, 87, 0.05);
   border-radius: 12px;
   padding: 16px 54px;
   border: none;
-  font-family: "Nunito Sans";
+  font-family: 'Nunito Sans';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -182,22 +181,9 @@
   color: #ffffff;
 }
 
-
-
-
-
-
-
 @media only screen and (max-width: 768px) {
   .content_box {
     position: absolute;
     left: 150px;
-  }
-}
-
-
-@media only screen and (max-width: 428px) {
-  .content-left {
-    display: none;
   }
 }

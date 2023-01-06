@@ -71,12 +71,12 @@
 .border-tf {
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: 162px;
   height: 50px;
-  padding-top: 10px;
   margin-right: 30px;
-  border-radius: 10px;
   gap: 10px;
+  border-radius: 10px;
   justify-content: center;
   border: 1px solid white;
   background: rgba(255, 255, 255, 0.2);
@@ -107,7 +107,7 @@
 }
 
 .content-grap-left {
-  width: 520px;
+  width: 65%;
   height: 468px;
   border-radius: 20px;
   background: white;
@@ -115,7 +115,7 @@
 }
 
 .content-grap-right {
-  width: 420px;
+  width: 35%;
   height: 468px;
   background: white;
   border-radius: 20px;
@@ -155,8 +155,11 @@
   margin-top: 20px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 100px;
   height: 300px;
-  width: 100%;
+  width: 80%;
 }
 
 .grap-one {
@@ -164,8 +167,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-left: 20px;
+  align-items: center;
+  margin: 0 5px;
   height: 100%;
+  right: 20px;
 }
 
 .border-grap {
@@ -301,7 +306,7 @@
 .content-transaksi {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding-top: 40px;
 }
 
@@ -310,6 +315,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 25px;
+  text-wrap: text-wrap;
 }
 
 .see-all {
@@ -471,6 +477,7 @@
 
   .content-grap {
     width: 100%;
+    flex-direction: column;
   }
 
   .content-grap-left {
@@ -552,6 +559,10 @@
 @media only screen and (max-width: 428px) {
   .content-all {
     height: 900px;
+  }
+
+  .text-price {
+    width: 108%;
   }
 
   .content-right {
@@ -646,7 +657,8 @@
   .see-all {
     font-size: 20px;
   }
-  .text-price {
-    width: 108%;
+
+  .box {
+    position: fixed;
   }
 }
