@@ -165,7 +165,7 @@ function Confirmation() {
                 <Image
                   src={
                     image ===
-                    "https://res.cloudinary.com/dd1uwz8eu/image/upload/v1666604839/null"
+                      "https://res.cloudinary.com/dd1uwz8eu/image/upload/v1666604839/null"
                       ? `${process.env.CLOUDINARY_LINK}`
                       : image
                   }
@@ -245,7 +245,7 @@ function Confirmation() {
                     </p>
                     <div className={styles.pin}>
                       <ReactCodeInput
-                        type="number"
+                        type="password"
                         fields={6}
                         pattern="/^-?\d+\.?\d*$/"
                         onChange={valuePin}
