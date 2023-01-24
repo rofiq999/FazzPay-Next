@@ -93,9 +93,5 @@ You may also see any lint errors in the console.
     </div>
 </table>
 
-## Related Project
-
--  Frontend Deploy [`here`](https://coffee-time-react.vercel.app/)
--  Backend API Deploy [`here`](https://coffee-time-be-new.vercel.app/)
 
 <p align="center"><sub><b>&copy;2022❤️Fazzpay☕</b></sub></p>
