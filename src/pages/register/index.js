@@ -15,6 +15,7 @@ import registerActions from "../../redux/actions/register";
 // import toastify
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Layout from '../../components/Layout';
 
 
 function Register() {
@@ -96,73 +97,75 @@ function Register() {
 
     return (
         <>
-            <p className={css.title_phone}>FazzPay</p>
-            <div className={css.main_content}>
-                {/* Content Left */}
-                <Dashboard />
+            <Layout title="register">
+                <p className={css.title_phone}>FazzPay</p>
+                <div className={css.main_content}>
+                    {/* Content Left */}
+                    <Dashboard />
 
-                {/* Content Right */}
-                <div className={css.content_right}>
-                    <div className={css.content_form}>
-                        <div className={css.phone_view}>
-                            <h2 className={css.title_bar_1_phone}>Sign Up</h2>
-                            <p className={css.title_bar_2_phone}>Create your account to access FazzPay.</p>
-                        </div>
-                        <h2 className={css.title_bar_1}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h2>
-                        <p className={css.title_bar_2}>Transfering money is eassier than ever, you can access FazzPay wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
-                        <div className={css.firstname}>
-                            <i className={`fa-solid fa-user ${(inputpending) ? "text-secondary" : (input) ? "text-primary" : "text-danger"}`}></i>
-                            <input
-                                type="text"
-                                name="firstName"
-                                id=""
-                                onChange={changeHandler}
-                                placeholder='Enter your firstname' />
-                        </div>
-                        <div className={css.lastname}>
-                            <i className={`fa-solid fa-user ${(inputpending) ? "text-secondary" : (input) ? "text-primary" : "text-danger"}`}></i>
-                            <input
-                                type="text"
-                                name="lastName"
-                                id=""
-                                onChange={changeHandler}
-                                placeholder='Enter your lastname' />
-                        </div>
-                        <div className={css.email}>
-                            <i className={`fa-regular fa-envelope ${(inputpendingemail) ? "text-secondary" : (inputemail) ? "text-primary" : "text-danger"}`}></i>
-                            <input
-                                type="email"
-                                name="email"
-                                id=""
-                                onChange={changeHandler}
-                                placeholder='Enter your e-mail' />
-                        </div>
-                        <div className={css.password}>
-                            <i className={`fa-solid fa-lock ${(inputpending) ? "text-secondary" : (input) ? "text-primary" : "text-danger"}`}></i>
-                            <input
-                                type={type}
-                                name="password"
-                                id=""
-                                onChange={changeHandler}
-                                placeholder='Enter your password' />
-                            <i className={icon} onClick={handleToggle}></i>
-                        </div>
-                        <button className={css.login} onClick={postRegister}>Sign Up</button>
-                        <div className={css.signup}>
-                            <p>Already have an account? Let`s <Link href="/login">Login</Link></p>
+                    {/* Content Right */}
+                    <div className={css.content_right}>
+                        <div className={css.content_form}>
+                            <div className={css.phone_view}>
+                                <h2 className={css.title_bar_1_phone}>Sign Up</h2>
+                                <p className={css.title_bar_2_phone}>Create your account to access FazzPay.</p>
+                            </div>
+                            <h2 className={css.title_bar_1}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h2>
+                            <p className={css.title_bar_2}>Transfering money is eassier than ever, you can access FazzPay wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
+                            <div className={css.firstname}>
+                                <i className={`fa-solid fa-user ${(inputpending) ? "text-secondary" : (input) ? "text-primary" : "text-danger"}`}></i>
+                                <input
+                                    type="text"
+                                    name="firstName"
+                                    id=""
+                                    onChange={changeHandler}
+                                    placeholder='Enter your firstname' />
+                            </div>
+                            <div className={css.lastname}>
+                                <i className={`fa-solid fa-user ${(inputpending) ? "text-secondary" : (input) ? "text-primary" : "text-danger"}`}></i>
+                                <input
+                                    type="text"
+                                    name="lastName"
+                                    id=""
+                                    onChange={changeHandler}
+                                    placeholder='Enter your lastname' />
+                            </div>
+                            <div className={css.email}>
+                                <i className={`fa-regular fa-envelope ${(inputpendingemail) ? "text-secondary" : (inputemail) ? "text-primary" : "text-danger"}`}></i>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id=""
+                                    onChange={changeHandler}
+                                    placeholder='Enter your e-mail' />
+                            </div>
+                            <div className={css.password}>
+                                <i className={`fa-solid fa-lock ${(inputpending) ? "text-secondary" : (input) ? "text-primary" : "text-danger"}`}></i>
+                                <input
+                                    type={type}
+                                    name="password"
+                                    id=""
+                                    onChange={changeHandler}
+                                    placeholder='Enter your password' />
+                                <i className={icon} onClick={handleToggle}></i>
+                            </div>
+                            <button className={css.login} onClick={postRegister}>Sign Up</button>
+                            <div className={css.signup}>
+                                <p>Already have an account? Let`s <Link href="/login">Login</Link></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar={false}
-                closeOnClick={true}
-                pauseOnHover={true}
-                draggable={true}
-                theme="light"
-            />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={3000}
+                    hideProgressBar={false}
+                    closeOnClick={true}
+                    pauseOnHover={true}
+                    draggable={true}
+                    theme="light"
+                />
+            </Layout>
         </>
     )
 }

@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Drawers from "../../components/SidebarToggle/Drawer";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Layout from "../../components/Layout";
 
 function Profile() {
   const router = useRouter();
@@ -51,7 +52,7 @@ function Profile() {
         (res) => (
           console.log(res),
           toast.success(res.data.msg),
-          dispatch(authActions.userThunk(getToken,getId))
+          dispatch(authActions.userThunk(getToken, getId))
         )
       )
       .catch((err) => toast.error(err.response.data.msg));
@@ -68,7 +69,7 @@ function Profile() {
   useEffect(() => {
     const getToken = Cookies.get("token");
     const getId = Cookies.get(`id`)
-    dispatch(authActions.userThunk(getToken,getId));
+    dispatch(authActions.userThunk(getToken, getId));
   }, [dispatch]);
 
   // handleClose, handleShow => Show Modals
@@ -90,130 +91,132 @@ function Profile() {
   };
   return (
     <>
-      <Header />
-      <div className={`container-fluid ${css.background_container}`}>
-        <div className={`container d-flex gap-4 ${css.content_inti}`}>
-          <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
-            <Sidebar page="profile" />
-          </section>
-          <div className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}>
-            <div className={css.content_profile}>
-              <Image
-                className="rounded-3"
-                src={
-                  display ===
-                  "https://res.cloudinary.com/dd1uwz8eu/image/upload/v1666604839/null"
-                    ? `${process.env.CLOUDINARY_LINK}`
-                    : display
-                }
-                alt="image"
-                width={90}
-                height={90}
-              />
-
-              <div
-                className={btnsave ? "d-none" : `${css.profile_edit}`}
-                onClick={handleSaveShow}
-              >
-                {/* <i className="fa-solid fa-pencil"></i> */}
-                <label htmlFor="file">Edit</label>
-                <input
-                  type="file"
-                  name="file"
-                  id="file"
-                  onChange={inputImage}
-                  className="d-none"
+      <Layout title="profile">
+        <Header />
+        <div className={`container-fluid ${css.background_container}`}>
+          <div className={`container d-flex gap-4 ${css.content_inti}`}>
+            <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
+              <Sidebar page="profile" />
+            </section>
+            <div className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}>
+              <div className={css.content_profile}>
+                <Image
+                  className="rounded-3"
+                  src={
+                    display ===
+                      "https://res.cloudinary.com/dd1uwz8eu/image/upload/v1666604839/null"
+                      ? `${process.env.CLOUDINARY_LINK}`
+                      : display
+                  }
+                  alt="image"
+                  width={90}
+                  height={90}
                 />
-              </div>
-              <div className={btnsave ? `${css.profile_button}` : "d-none"}>
-                <button
-                  className={css.btn_save_profile}
-                  onClick={() => (Editimage(), setBtnsave(false))}
-                >
-                  Save Profile
-                </button>
-                <button
-                  className={css.btn_cancel_profile}
-                  onClick={handleCancel}
-                >
-                  Cancel
-                </button>
-              </div>
 
-              <p className={css.name}>
-                {profile.firstname} {profile.lastname}
-              </p>
-              <p className={css.phone}>
-                {profile.number === null
-                  ? "'Please Manage phone number'"
-                  : profile.number}
-              </p>
-              <div className={`${css.profile_link}`} onClick={toPersonalinfo}>
-                <p>Personal Information</p>
-                <i className="fa-solid fa-arrow-right"></i>
-              </div>
-              <div className={`${css.profile_link}`} onClick={toChangepassword}>
-                <p>Change Password</p>
-                <i className="fa-solid fa-arrow-right"></i>
-              </div>
-              <div className={`${css.profile_link}`} onClick={toChangepin}>
-                <p>Change PIN</p>
-                <i className="fa-solid fa-arrow-right"></i>
-              </div>
-              <div className={`${css.notifikasi}`}>
-                <p>Notification</p>
-                <label className={css.switch}>
-                  <input type="checkbox" />
-                  <span className={`${css.slider} ${css.round}`}></span>
-                </label>
-              </div>
-              <div className={`${css.profile_link}`} onClick={handleShow}>
-                <p>Logout</p>
+                <div
+                  className={btnsave ? "d-none" : `${css.profile_edit}`}
+                  onClick={handleSaveShow}
+                >
+                  {/* <i className="fa-solid fa-pencil"></i> */}
+                  <label htmlFor="file">Edit</label>
+                  <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    onChange={inputImage}
+                    className="d-none"
+                  />
+                </div>
+                <div className={btnsave ? `${css.profile_button}` : "d-none"}>
+                  <button
+                    className={css.btn_save_profile}
+                    onClick={() => (Editimage(), setBtnsave(false))}
+                  >
+                    Save Profile
+                  </button>
+                  <button
+                    className={css.btn_cancel_profile}
+                    onClick={handleCancel}
+                  >
+                    Cancel
+                  </button>
+                </div>
+
+                <p className={css.name}>
+                  {profile.firstname} {profile.lastname}
+                </p>
+                <p className={css.phone}>
+                  {profile.number === null
+                    ? "'Please Manage phone number'"
+                    : profile.number}
+                </p>
+                <div className={`${css.profile_link}`} onClick={toPersonalinfo}>
+                  <p>Personal Information</p>
+                  <i className="fa-solid fa-arrow-right"></i>
+                </div>
+                <div className={`${css.profile_link}`} onClick={toChangepassword}>
+                  <p>Change Password</p>
+                  <i className="fa-solid fa-arrow-right"></i>
+                </div>
+                <div className={`${css.profile_link}`} onClick={toChangepin}>
+                  <p>Change PIN</p>
+                  <i className="fa-solid fa-arrow-right"></i>
+                </div>
+                <div className={`${css.notifikasi}`}>
+                  <p>Notification</p>
+                  <label className={css.switch}>
+                    <input type="checkbox" />
+                    <span className={`${css.slider} ${css.round}`}></span>
+                  </label>
+                </div>
+                <div className={`${css.profile_link}`} onClick={handleShow}>
+                  <p>Logout</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
+        <Footer />
 
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>confirmation</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>are you sure you want to log out?</Modal.Body>
-        <Modal.Footer>
-          <Button
-            variant="success"
-            className="fw-bold text-bg-primary text-white"
-            onClick={handleLogout}
-          >
-            Yes
-          </Button>
-          <Button
-            variant="danger"
-            className="fw-bold text-bg-dark text-white"
-            onClick={handleClose}
-          >
-            No
-          </Button>
-        </Modal.Footer>
-      </Modal>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>confirmation</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>are you sure you want to log out?</Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="success"
+              className="fw-bold text-bg-primary text-white"
+              onClick={handleLogout}
+            >
+              Yes
+            </Button>
+            <Button
+              variant="danger"
+              className="fw-bold text-bg-dark text-white"
+              onClick={handleClose}
+            >
+              No
+            </Button>
+          </Modal.Footer>
+        </Modal>
 
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        closeOnClick={true}
-        pauseOnHover={true}
-        draggable={true}
-        theme="light"
-      />
-      <Drawers pages="profile" />
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover={true}
+          draggable={true}
+          theme="light"
+        />
+        <Drawers pages="profile" />
+      </Layout>
     </>
   );
 }

@@ -18,6 +18,7 @@ import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import authActions from '../../redux/actions/auth';
+import Layout from '../../components/Layout';
 
 function Login() {
   const dispatch = useDispatch();
@@ -73,47 +74,49 @@ function Login() {
   //     }, [dispatch]);
   return (
     <>
-      <p className={css.title_phone}>FazzPay</p>
-      <div className={css.main_content}>
-        {/* Content Left */}
-        <Dashboard />
+      <Layout title='login'>
+        <p className={css.title_phone}>FazzPay</p>
+        <div className={css.main_content}>
+          {/* Content Left */}
+          <Dashboard />
 
-        {/* Content Right */}
-        <div className={css.content_right}>
-          <div className={css.content_form}>
-            <h2 className={css.title_bar_1}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h2>
-            <p className={css.title_bar_2}>Transfering money is eassier than ever, you can access FazzPay wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
-            <div className={css.phone_view}>
-              <h2 className={css.title_bar_1_phone}>Login</h2>
-              <p className={css.title_bar_2_phone}>Login to your existing account to access all the features in FazzPay.</p>
-            </div>
-            <div className={css.email}>
-              <i className={`fa-regular fa-envelope ${inputpending ? 'text-secondary' : input ? 'text-primary' : 'text-danger'}`}></i>
-              <input type="email" name="email" id="" onChange={changeHandler} placeholder="Enter your e-mail" />
-            </div>
-            <div className={css.password}>
-              <i className={`fa-solid fa-lock ${inputpending ? 'text-secondary' : input ? 'text-primary' : 'text-danger'}`}></i>
-              <input type={type} name="password" id="" onChange={changeHandler} placeholder="Enter your password" />
-              <i className={icon} onClick={handleToggle}></i>
-            </div>
-            <div className={css.forgot}>
-              <Link href="/resetpassword">
-                <p className={css['forgot-pass']}>Forgot Password?</p>
-              </Link>
-            </div>
-            <button className={css.login} onClick={postLogin}>
-              Login
-            </button>
-            <div className={css.signup}>
-              <p>
-                Don`t have an account? Let`s <Link href="/register">Sign Up</Link>
-              </p>
+          {/* Content Right */}
+          <div className={css.content_right}>
+            <div className={css.content_form}>
+              <h2 className={css.title_bar_1}>Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users</h2>
+              <p className={css.title_bar_2}>Transfering money is eassier than ever, you can access FazzPay wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!</p>
+              <div className={css.phone_view}>
+                <h2 className={css.title_bar_1_phone}>Login</h2>
+                <p className={css.title_bar_2_phone}>Login to your existing account to access all the features in FazzPay.</p>
+              </div>
+              <div className={css.email}>
+                <i className={`fa-regular fa-envelope ${inputpending ? 'text-secondary' : input ? 'text-primary' : 'text-danger'}`}></i>
+                <input type="email" name="email" id="" onChange={changeHandler} placeholder="Enter your e-mail" />
+              </div>
+              <div className={css.password}>
+                <i className={`fa-solid fa-lock ${inputpending ? 'text-secondary' : input ? 'text-primary' : 'text-danger'}`}></i>
+                <input type={type} name="password" id="" onChange={changeHandler} placeholder="Enter your password" />
+                <i className={icon} onClick={handleToggle}></i>
+              </div>
+              <div className={css.forgot}>
+                <Link href="/resetpassword">
+                  <p className={css['forgot-pass']}>Forgot Password?</p>
+                </Link>
+              </div>
+              <button className={css.login} onClick={postLogin}>
+                Login
+              </button>
+              <div className={css.signup}>
+                <p>
+                  Don`t have an account? Let`s <Link href="/register">Sign Up</Link>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <ToastContainer position="top-center" autoClose={2000} hideProgressBar={false} closeOnClick={true} pauseOnHover={true} draggable={true} theme="light" />
+        <ToastContainer position="top-center" autoClose={2000} hideProgressBar={false} closeOnClick={true} pauseOnHover={true} draggable={true} theme="light" />
+      </Layout>
     </>
   );
 }

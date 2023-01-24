@@ -11,6 +11,7 @@ import Cookies from "js-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/router";
+import Layout from "../../../components/Layout";
 
 function Changepassword() {
   const [type, setType] = useState("password");
@@ -111,7 +112,7 @@ function Changepassword() {
           setInputpending__(false),
           setInput__(true),
           toast.success(res.data.msg),
-          setTimeout(() => {return router.replace("/profile")},2000)
+          setTimeout(() => { return router.replace("/profile") }, 2000)
         )
       )
       .catch(
@@ -129,96 +130,95 @@ function Changepassword() {
 
   return (
     <>
-      <Header />
-      <div className={`container-fluid ${css.background_container}`}>
-        <div className={`container d-flex gap-4 ${css.content_inti}`}>
-          <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
-            <Sidebar page="profile child" />
-          </section>
-          <div className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}>
-            <div className="d-flex flex-column">
-              <p className={css.title_password}>Change Password</p>
-              <p className={css.title_desc}>
-                You must enter your current password and then type your new
-                password twice.
-              </p>
-              <div className={css.content_password}>
-                <div
-                  className={`${
-                    inputpending
-                      ? css.password
-                      : input
-                      ? css.password_blue
-                      : css.password_red
-                  }`}
-                >
-                  <i className="fa-solid fa-lock"></i>
-                  <input
-                    type={type}
-                    name="newPassword"
-                    id=""
-                    onChange={valuePassword}
-                    placeholder="Current password"
-                  />
-                  <i className={icon} onClick={handleToggle1}></i>
+      <Layout title="change password">
+        <Header />
+        <div className={`container-fluid ${css.background_container}`}>
+          <div className={`container d-flex gap-4 ${css.content_inti}`}>
+            <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
+              <Sidebar page="profile child" />
+            </section>
+            <div className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}>
+              <div className="d-flex flex-column">
+                <p className={css.title_password}>Change Password</p>
+                <p className={css.title_desc}>
+                  You must enter your current password and then type your new
+                  password twice.
+                </p>
+                <div className={css.content_password}>
+                  <div
+                    className={`${inputpending
+                        ? css.password
+                        : input
+                          ? css.password_blue
+                          : css.password_red
+                      }`}
+                  >
+                    <i className="fa-solid fa-lock"></i>
+                    <input
+                      type={type}
+                      name="newPassword"
+                      id=""
+                      onChange={valuePassword}
+                      placeholder="Current password"
+                    />
+                    <i className={icon} onClick={handleToggle1}></i>
+                  </div>
+                  <div
+                    className={`${inputpending_
+                        ? css.password
+                        : input_
+                          ? css.password_blue
+                          : css.password_red
+                      }`}
+                  >
+                    <i className="fa-solid fa-lock"></i>
+                    <input
+                      type={type_}
+                      name="confirmPassword"
+                      id=""
+                      onChange={valueConfirm}
+                      placeholder="New password"
+                    />
+                    <i className={icon_} onClick={handleToggle2}></i>
+                  </div>
+                  <div
+                    className={`${inputpending__
+                        ? css.password
+                        : input__
+                          ? css.password_blue
+                          : css.password_red
+                      }`}
+                  >
+                    <i className="fa-solid fa-lock"></i>
+                    <input
+                      type={type__}
+                      name="repeatPassword"
+                      id=""
+                      onChange={valueRepeat}
+                      placeholder="New password"
+                    />
+                    <i className={icon__} onClick={handleToggle3}></i>
+                  </div>
                 </div>
-                <div
-                  className={`${
-                    inputpending_
-                      ? css.password
-                      : input_
-                      ? css.password_blue
-                      : css.password_red
-                  }`}
-                >
-                  <i className="fa-solid fa-lock"></i>
-                  <input
-                    type={type_}
-                    name="confirmPassword"
-                    id=""
-                    onChange={valueConfirm}
-                    placeholder="New password"
-                  />
-                  <i className={icon_} onClick={handleToggle2}></i>
+                <div className={css.button_change_password}>
+                  <button onClick={clickHandler}>Change Password</button>
                 </div>
-                <div
-                  className={`${
-                    inputpending__
-                      ? css.password
-                      : input__
-                      ? css.password_blue
-                      : css.password_red
-                  }`}
-                >
-                  <i className="fa-solid fa-lock"></i>
-                  <input
-                    type={type__}
-                    name="repeatPassword"
-                    id=""
-                    onChange={valueRepeat}
-                    placeholder="New password"
-                  />
-                  <i className={icon__} onClick={handleToggle3}></i>
-                </div>
-              </div>
-              <div className={css.button_change_password}>
-                <button onClick={clickHandler}>Change Password</button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
-      <Drawers pages="profile child" />
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        closeOnClick={true}
-        pauseOnHover={true}
-        draggable={true}
-        theme="light"
-      />
+        <Footer />
+        <Drawers pages="profile child" />
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover={true}
+          draggable={true}
+          theme="light"
+        />
+      </Layout>
     </>
   );
 }

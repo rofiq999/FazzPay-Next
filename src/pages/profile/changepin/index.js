@@ -11,6 +11,7 @@ import Drawers from "../../../components/SidebarToggle/Drawer";
 import { ToastContainer, toast } from "react-toastify";
 import Cookies from "js-cookie";
 import axios from "axios";
+import Layout from "../../../components/Layout";
 function ChangePin() {
    const [getpin, setGetpin] = useState("");
    const [input, setInput] = useState(true);
@@ -68,56 +69,58 @@ function ChangePin() {
 
    return (
       <>
-         <Header />
-         <div className={`container-fluid ${css.background_container}`}>
-            <div className={`container d-flex gap-4 ${css.content_inti}`}>
-               <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
-                  <Sidebar page="profile child" />
-               </section>
-               <div
-                  className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}
-               >
-                  <section className={`d-flex flex-column`}>
-                     <div className={`${css.tittle}`}>Change PIN</div>
-                     <div className={`${css.desc}`}>
-                        Enter your current 6 digits Fazzpay PIN below to
-                        continue to the next steps.
-                     </div>
+         <Layout title="change pin">
+            <Header />
+            <div className={`container-fluid ${css.background_container}`}>
+               <div className={`container d-flex gap-4 ${css.content_inti}`}>
+                  <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
+                     <Sidebar page="profile child" />
                   </section>
-                  <section className={`${css.bottomContainer}`}>
-                     <div className={`${css.inputContainer}`}>
-                        <div className={`${css.inputPin}`}>
-                           <div className={css.pin}>
-                              <ReactCodeInput
-                                 type="password"
-                                 fields={6}
-                                 pattern="/^-?\d+\.?\d*$/"
-                                 onChange={valuePin}
-                                 {...props}
-                              />
+                  <div
+                     className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}
+                  >
+                     <section className={`d-flex flex-column`}>
+                        <div className={`${css.tittle}`}>Change PIN</div>
+                        <div className={`${css.desc}`}>
+                           Enter your current 6 digits Fazzpay PIN below to
+                           continue to the next steps.
+                        </div>
+                     </section>
+                     <section className={`${css.bottomContainer}`}>
+                        <div className={`${css.inputContainer}`}>
+                           <div className={`${css.inputPin}`}>
+                              <div className={css.pin}>
+                                 <ReactCodeInput
+                                    type="password"
+                                    fields={6}
+                                    pattern="/^-?\d+\.?\d*$/"
+                                    onChange={valuePin}
+                                    {...props}
+                                 />
+                              </div>
                            </div>
                         </div>
-                     </div>
-                     <div className={`${css.btnContainer}`}>
-                        <div className={`${css.btn}`} onClick={handleContinue}>
-                           Countinue
+                        <div className={`${css.btnContainer}`}>
+                           <div className={`${css.btn}`} onClick={handleContinue}>
+                              Countinue
+                           </div>
                         </div>
-                     </div>
-                  </section>
+                     </section>
+                  </div>
                </div>
             </div>
-         </div>
-         <Footer />
-         <Drawers pages="profile child" />
-         <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            closeOnClick={true}
-            pauseOnHover={true}
-            draggable={true}
-            theme="light"
-         />
+            <Footer />
+            <Drawers pages="profile child" />
+            <ToastContainer
+               position="top-center"
+               autoClose={2000}
+               hideProgressBar={false}
+               closeOnClick={true}
+               pauseOnHover={true}
+               draggable={true}
+               theme="light"
+            />
+         </Layout>
       </>
    );
 }

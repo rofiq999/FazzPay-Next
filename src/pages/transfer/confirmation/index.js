@@ -20,6 +20,7 @@ import axios from "axios";
 import authActions from "../../../redux/actions/auth";
 import { toast, ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
+import Layout from "../../../components/Layout";
 
 function Confirmation() {
   const transactions = useSelector((state) => state.auth.transactions);
@@ -150,132 +151,134 @@ function Confirmation() {
 
   return (
     <>
-      <Header />
-      <div className={`container-fluid ${styles.background_container}`}>
-        <div className={`container d-flex gap-4  ${styles.content_inti}`}>
-          <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
-            <Sidebar page="transfer child" />
-          </section>
-          <div
-            className={`col-lg-9 col-md-12 col-sm-12 ${styles.content_right}`}
-          >
-            <p className={styles["title"]}>Transfer To</p>
-            <div className={styles["content-user"]}>
-              <div className={styles["bor-samuel"]}>
-                <Image
-                  src={
-                    image ===
-                      "https://res.cloudinary.com/dd1uwz8eu/image/upload/v1666604839/null"
-                      ? `${process.env.CLOUDINARY_LINK}`
-                      : image
-                  }
-                  alt="Image_User"
-                  width={80}
-                  height={80}
-                  className="rounded-3"
-                />
-                <div className={styles["samuel"]}>
-                  <p className={styles["text-samuel"]}>
-                    {firstname} {lastname}
-                  </p>
-                  <p className={styles["phone-samuel"]}>{phone}</p>
-                </div>
-              </div>
-            </div>
-            <p className={styles["detail"]}>Details</p>
-            <div className={styles["content-user"]}>
-              <div className={styles["bor-samuel"]}>
-                <div className={styles["samuel"]}>
-                  <p className={styles["text-amount"]}>Amount</p>
-                  <p className={styles["price"]}>
-                    {costing(transactions.amount)}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className={styles["content-user"]}>
-              <div className={styles["bor-samuel"]}>
-                <div className={styles["samuel"]}>
-                  <p className={styles["text-amount"]}>Balance Left</p>
-                  <p className={styles["price"]}>{costing(profile.balance)}</p>
-                </div>
-              </div>
-            </div>
-            <div className={styles["content-user"]}>
-              <div className={styles["bor-samuel"]}>
-                <div className={styles["samuel"]}>
-                  <p className={styles["text-amount"]}>Date & Time</p>
-                  <p className={styles["price"]}>{transactionDate()}</p>
-                </div>
-              </div>
-            </div>
-            <div className={styles["content-user"]}>
-              <div className={styles["bor-samuel"]}>
-                <div className={styles["samuel"]}>
-                  <p className={styles["text-amount"]}>Notes</p>
-                  <p className={styles["price"]}>{transactions.notes}</p>
-                </div>
-              </div>
-            </div>
-            <div className="d-flex justify-content-end">
-              <button
-                className={styles["button"]}
-                type="button"
-                onClick={() => setShowModal(true)}
-              >
-                Continue
-              </button>
-              {showModal ? (
-                <div className={styles["content-all"]}>
-                  <div className={styles["modal"]}>
-                    <div className={styles["content-text-pin"]}>
-                      <p className={styles["text-pin"]}>
-                        Enter PIN to Transfer
-                      </p>
-                      <a
-                        className={styles["text-x"]}
-                        onClick={() => setShowModal(false)}
-                      >
-                        <i className="fa-sharp fa-solid fa-circle-xmark fs-4 text-danger"></i>
-                      </a>
-                    </div>
-                    <p className={styles["confirmation"]}>
-                      Enter your 6 digits PIN for confirmation to continue
-                      transferring money.
+      <Layout title="confirmation">
+        <Header />
+        <div className={`container-fluid ${styles.background_container}`}>
+          <div className={`container d-flex gap-4  ${styles.content_inti}`}>
+            <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
+              <Sidebar page="transfer child" />
+            </section>
+            <div
+              className={`col-lg-9 col-md-12 col-sm-12 ${styles.content_right}`}
+            >
+              <p className={styles["title"]}>Transfer To</p>
+              <div className={styles["content-user"]}>
+                <div className={styles["bor-samuel"]}>
+                  <Image
+                    src={
+                      image ===
+                        "https://res.cloudinary.com/dd1uwz8eu/image/upload/v1666604839/null"
+                        ? `${process.env.CLOUDINARY_LINK}`
+                        : image
+                    }
+                    alt="Image_User"
+                    width={80}
+                    height={80}
+                    className="rounded-3"
+                  />
+                  <div className={styles["samuel"]}>
+                    <p className={styles["text-samuel"]}>
+                      {firstname} {lastname}
                     </p>
-                    <div className={styles.pin}>
-                      <ReactCodeInput
-                        type="password"
-                        fields={6}
-                        pattern="/^-?\d+\.?\d*$/"
-                        onChange={valuePin}
-                        {...props}
-                      />
-                    </div>
-                    <button
-                      className={styles["button-sec"]}
-                      onClick={valuePinHandler}
-                    >
-                      Continue
-                    </button>
+                    <p className={styles["phone-samuel"]}>{phone}</p>
                   </div>
                 </div>
-              ) : null}
+              </div>
+              <p className={styles["detail"]}>Details</p>
+              <div className={styles["content-user"]}>
+                <div className={styles["bor-samuel"]}>
+                  <div className={styles["samuel"]}>
+                    <p className={styles["text-amount"]}>Amount</p>
+                    <p className={styles["price"]}>
+                      {costing(transactions.amount)}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles["content-user"]}>
+                <div className={styles["bor-samuel"]}>
+                  <div className={styles["samuel"]}>
+                    <p className={styles["text-amount"]}>Balance Left</p>
+                    <p className={styles["price"]}>{costing(profile.balance)}</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles["content-user"]}>
+                <div className={styles["bor-samuel"]}>
+                  <div className={styles["samuel"]}>
+                    <p className={styles["text-amount"]}>Date & Time</p>
+                    <p className={styles["price"]}>{transactionDate()}</p>
+                  </div>
+                </div>
+              </div>
+              <div className={styles["content-user"]}>
+                <div className={styles["bor-samuel"]}>
+                  <div className={styles["samuel"]}>
+                    <p className={styles["text-amount"]}>Notes</p>
+                    <p className={styles["price"]}>{transactions.notes}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="d-flex justify-content-end">
+                <button
+                  className={styles["button"]}
+                  type="button"
+                  onClick={() => setShowModal(true)}
+                >
+                  Continue
+                </button>
+                {showModal ? (
+                  <div className={styles["content-all"]}>
+                    <div className={styles["modal"]}>
+                      <div className={styles["content-text-pin"]}>
+                        <p className={styles["text-pin"]}>
+                          Enter PIN to Transfer
+                        </p>
+                        <a
+                          className={styles["text-x"]}
+                          onClick={() => setShowModal(false)}
+                        >
+                          <i className="fa-sharp fa-solid fa-circle-xmark fs-4 text-danger"></i>
+                        </a>
+                      </div>
+                      <p className={styles["confirmation"]}>
+                        Enter your 6 digits PIN for confirmation to continue
+                        transferring money.
+                      </p>
+                      <div className={styles.pin}>
+                        <ReactCodeInput
+                          type="password"
+                          fields={6}
+                          pattern="/^-?\d+\.?\d*$/"
+                          onChange={valuePin}
+                          {...props}
+                        />
+                      </div>
+                      <button
+                        className={styles["button-sec"]}
+                        onClick={valuePinHandler}
+                      >
+                        Continue
+                      </button>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer />
-      <Drawers pages="transfer child" />
-      <ToastContainer
-        position="top-center"
-        autoClose={2000}
-        hideProgressBar={false}
-        closeOnClick={true}
-        pauseOnHover={true}
-        draggable={true}
-        theme="light"
-      />
+        <Footer />
+        <Drawers pages="transfer child" />
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          closeOnClick={true}
+          pauseOnHover={true}
+          draggable={true}
+          theme="light"
+        />
+      </Layout>
     </>
   );
 }

@@ -12,6 +12,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { ToastContainer, toast } from "react-toastify";
 import authActions from "../../../redux/actions/auth";
+import Layout from "../../../components/Layout";
 
 function PersonalInformation() {
    const router = useRouter();
@@ -49,126 +50,128 @@ function PersonalInformation() {
          .then((res) => {
             // console.log(res.data);
             toast.success(res.data.msg);
-            dispatch(authActions.userThunk(getToken,getId));
+            dispatch(authActions.userThunk(getToken, getId));
          })
          .catch((err) => console.log(err));
    };
    useEffect(() => {
       const getToken = Cookies.get("token");
       const getId = Cookies.get(`id`)
-      dispatch(authActions.userThunk(getToken,getId));
-    }, [dispatch]);
+      dispatch(authActions.userThunk(getToken, getId));
+   }, [dispatch]);
    return (
       <>
-         <Header />
-         <div className={`container-fluid ${css.background_container}`}>
-            <div className={`container d-flex gap-4 ${css.content_inti}`}>
-               <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
-                  <Sidebar page="profile child" />
-               </section>
-               <div
-                  className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}
-               >
-                  <div className={""}>
-                     <div className="d-flex justify-content-between">
-                        <div>
-                           <p className={css.personal}>Personal Information</p>
-                           <p className={css.personal_desc}>
-                              We got your personal information from the sign up
-                              proccess. If you want to make changes on your
-                              information, contact our support.
-                           </p>
-                        </div>
-                        <section>
-                           <div
-                              className={`${css.buttonedit} btn btn-outline-warning text-black fw-bold `}
-                              onClick={() => {
-                                 setEdit(!edit);
-                                 console.log("click");
-                              }}
-                           >
-                              <span className="text-center">Edit</span>
+         <Layout title="personal information">
+            <Header />
+            <div className={`container-fluid ${css.background_container}`}>
+               <div className={`container d-flex gap-4 ${css.content_inti}`}>
+                  <section className="col-12 col-sm-12 col-md-3 d-none d-sm-none d-lg-block ">
+                     <Sidebar page="profile child" />
+                  </section>
+                  <div
+                     className={`col-lg-9 col-md-12 col-sm-12 ${css.content_right}`}
+                  >
+                     <div className={""}>
+                        <div className="d-flex justify-content-between">
+                           <div>
+                              <p className={css.personal}>Personal Information</p>
+                              <p className={css.personal_desc}>
+                                 We got your personal information from the sign up
+                                 proccess. If you want to make changes on your
+                                 information, contact our support.
+                              </p>
                            </div>
-                        </section>
-                     </div>
-                     <div className={css.box_input}>
-                        <p>First Name</p>
-                        <input
-                           type="text"
-                           placeholder="Input firstname"
-                           value={firstName}
-                           onChange={handleFirstname}
-                           disabled={edit}
-                        />
-                     </div>
-                     <div className={css.box_input}>
-                        <p>Last Name</p>
-                        <input
-                           type="text"
-                           placeholder="Input lastname"
-                           value={lastName}
-                           onChange={(e) => {
-                              handleLastname(e);
-                           }}
-                           disabled={edit}
-                        />
-                     </div>
-                     <div className={css.box_input}>
-                        <p>Verified E-mail</p>
-                        <input
-                           type="email"
-                           name=""
-                           placeholder="Input email"
-                           value={email}
-                           disabled
-                           className="text-muted"
-                        />
-                     </div>
-                     <div className={css.box_input_number}>
-                        <div className={css.phone_number}>
-                           <p>Phone Number</p>
+                           <section>
+                              <div
+                                 className={`${css.buttonedit} btn btn-outline-warning text-black fw-bold `}
+                                 onClick={() => {
+                                    setEdit(!edit);
+                                    console.log("click");
+                                 }}
+                              >
+                                 <span className="text-center">Edit</span>
+                              </div>
+                           </section>
+                        </div>
+                        <div className={css.box_input}>
+                           <p>First Name</p>
                            <input
-                              type="number"
-                              name=""
-                              id=""
-                              placeholder="Input phone number"
-                              disabled
-                              value={noTelp}
+                              type="text"
+                              placeholder="Input firstname"
+                              value={firstName}
+                              onChange={handleFirstname}
+                              disabled={edit}
                            />
                         </div>
-                        <div className={css.manage} onClick={toManagePhone}>
-                           <p>Manage</p>
-                        </div>
-                     </div>
-                     {!edit ? (
-                        <div className="d-flex justify-content-center align-items-center my-3">
-                           <button
-                              className="btn btn-outline-success me-3 px-5"
-                              onClick={() => {
-                                 handleSave();
+                        <div className={css.box_input}>
+                           <p>Last Name</p>
+                           <input
+                              type="text"
+                              placeholder="Input lastname"
+                              value={lastName}
+                              onChange={(e) => {
+                                 handleLastname(e);
                               }}
-                           >
-                              <span className={css.buttonsave}>
-                                 <i className="fa-solid fa-file-pen">Save</i>
-                              </span>
-                           </button>
+                              disabled={edit}
+                           />
                         </div>
-                     ) : null}
+                        <div className={css.box_input}>
+                           <p>Verified E-mail</p>
+                           <input
+                              type="email"
+                              name=""
+                              placeholder="Input email"
+                              value={email}
+                              disabled
+                              className="text-muted"
+                           />
+                        </div>
+                        <div className={css.box_input_number}>
+                           <div className={css.phone_number}>
+                              <p>Phone Number</p>
+                              <input
+                                 type="number"
+                                 name=""
+                                 id=""
+                                 placeholder="Input phone number"
+                                 disabled
+                                 value={noTelp}
+                              />
+                           </div>
+                           <div className={css.manage} onClick={toManagePhone}>
+                              <p>Manage</p>
+                           </div>
+                        </div>
+                        {!edit ? (
+                           <div className="d-flex justify-content-center align-items-center my-3">
+                              <button
+                                 className="btn btn-outline-success me-3 px-5"
+                                 onClick={() => {
+                                    handleSave();
+                                 }}
+                              >
+                                 <span className={css.buttonsave}>
+                                    <i className="fa-solid fa-file-pen">Save</i>
+                                 </span>
+                              </button>
+                           </div>
+                        ) : null}
+                     </div>
                   </div>
                </div>
             </div>
-         </div>
-         <Footer />
-         <Drawers pages="profile child" />
-         <ToastContainer
-            position="top-center"
-            autoClose={2000}
-            hideProgressBar={false}
-            closeOnClick={true}
-            pauseOnHover={true}
-            draggable={true}
-            theme="light"
-         />
+            <Footer />
+            <Drawers pages="profile child" />
+            <ToastContainer
+               position="top-center"
+               autoClose={2000}
+               hideProgressBar={false}
+               closeOnClick={true}
+               pauseOnHover={true}
+               draggable={true}
+               theme="light"
+            />
+         </Layout>
       </>
    );
 }
